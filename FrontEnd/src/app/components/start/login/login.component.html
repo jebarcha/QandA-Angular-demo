@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row" style="width:100%">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center" style="padding: 20px;">
+                <h3>Login</h3>
+                <br>
+                <form [formGroup]="loginForm" 
+                      (ngSubmit)="log()">
+                    <div class="form-group" 
+                         style="text-align: start;">
+                        <input type="text" 
+                               class="form-control" 
+                               placeholder="User"
+                               formControlName="username">
+                        <span class="text-danger ml-2"
+                            *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">
+                            User <strong>is required</strong>
+                        </span>
+                    </div>
+                    <div class="form-group"
+                         style="text-align: start;">
+                        <input type="password" 
+                               class="form-control" 
+                               placeholder="Password"
+                               formControlName="password">
+                        <span class="text-danger ml-2"
+                              *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
+                            Password <strong>is required</strong>
+                        </span>
+    
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary mr-2 btn-login"
+                                type="submit"
+                                [disabled]="loginForm.invalid">
+                            Ok
+                        </button>
+                        <button class="btn btn-secondary" routerLink="/welcome">Cancel</button>
+                    </div>
+                    <div class="form-group">
+                        <a style="color:#F05F44; cursor: pointer;"
+                            routerLink="/register">Create account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
