@@ -1,0 +1,19 @@
+install next packages form nuget:
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.SqlServer
+-------------------------------------
+
+appsettings.json
+  "ConnectionStrings": {
+    "EShoppingDb": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EShoppingDb;Integrated Security=True;"
+  },
+
+"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EShoppingDb;Integrated Security=True;"
+
+----------------------------
+
+Create database:
+ Add-Migration Inicial
+ Update-database
