@@ -29,7 +29,7 @@ namespace BackEnd.Controllers
                 var validateExistence = await _userService.ValidateExistence(user);
                 if (validateExistence) 
                 {
-                    return BadRequest(new { message = $"User {user.UserName} already exists" });
+                    return BadRequest(new { message = $"Username {user.UserName} already exists" });
                 }
 
                 user.Password = Encrypt.EncryptPassword(user.Password);
@@ -60,7 +60,7 @@ namespace BackEnd.Controllers
 
                 user.Password = Encrypt.EncryptPassword(changePassword.PasswordNew);
                 await _userService.UpdatePassword(user);
-                return Ok(new { messsage = "Password was changed successfully"});
+                return Ok(new { message = "Password was changed successfully"});
             }
             catch (Exception ex)
             {

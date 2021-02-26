@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../../../models/user'
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private toastr: ToastrService,
-              private router: Router) { 
+              private router: Router,
+              private loginService: LoginService) { 
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -27,8 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   log() {
-    console.log('log-submit', this.loginForm);
-
     const { username, password} = this.loginForm.value;
     const user: User = {
       username,
@@ -36,17 +36,26 @@ export class LoginComponent implements OnInit {
     };
   
     this.loading = true;
-    setTimeout( () => {
-      if (user.username === 'josebarajas' && user.password === 'admin123') {
-        this.loginForm.reset();
-        this.router.navigate(['/dashboard']);
-      } else {
-        this.toastr.error('Invalid username or password', 'Error');
-        this.loginForm.reset();
-      }
-      this.loading = false;
-    }, 3000);
-
-    console.log(user);
+    this.loginService.login(user).subscribe(data => {
+      console.log(data);
+      this.loginService.setLocalStorage(data.username);
+      this.loading= false;
+      this.router.navigate(['/dashboard']);
+    }, error => {
+      //console.log(error);
+      this.loading=false;
+      this.loginForm.reset();
+      this.toastr.error(error.error.message, 'Error');
+    });
+    // setTimeout( () => {
+    //   if (user.username === 'josebarajas' && user.password === 'admin123') {
+    //     this.loginForm.reset();
+    //     this.router.navigate(['/dashboard']);
+    //   } else {
+    //     this.toastr.error('Invalid username or password', 'Error');
+    //     this.loginForm.reset();
+    //   }
+    //   this.loading = false;
+    // }, 3000);
   }
 }

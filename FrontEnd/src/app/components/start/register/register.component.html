@@ -3,9 +3,10 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card text-center" style="padding: 20px">
                 <h3>Register</h3>
-                <br>
+                <app-loading *ngIf="loading"></app-loading>
                 <form [formGroup]="register"
-                      (ngSubmit)="registerUser()">
+                      (ngSubmit)="registerUser()"
+                      style="padding: 10px">
                     <div class="form-group" style="text-align: start;">
                         <input type="text" 
                             class="form-control" 

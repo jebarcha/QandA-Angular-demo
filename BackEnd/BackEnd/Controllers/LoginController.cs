@@ -31,7 +31,7 @@ namespace BackEnd.Controllers
                 {
                     return BadRequest(new { message = "Invalid username or password" });
                 }
-                return Ok(new { user = userDb.UserName });
+                return Ok(new { username = userDb.UserName });
             }
             catch (Exception ex)
             {
