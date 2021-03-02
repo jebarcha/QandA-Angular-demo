@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HOpJ+OkY8F4L7fIj39xy5pd0yot9uw/KYgAB9P+OOOldvkErb+EMD0G4KKK4KiJD2L/cxnavTJNHOFw4Fox5Lg==",
+  "dgSpecHash": "f3LHM74B/WfB9E/CkxDCr9f2uneIj9mx6kVjL96EIjKdaqD1pScg48lGqilKeaOPOLtyccLypbenT0enZ/kCeg==",
   "success": true,
   "projectFilePath": "C:\\MisCursos\\AngularApps\\_2021\\WithDotNet5\\QandA\\BackEnd\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

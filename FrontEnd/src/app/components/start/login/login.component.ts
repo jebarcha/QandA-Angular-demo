@@ -36,26 +36,15 @@ export class LoginComponent implements OnInit {
     };
   
     this.loading = true;
-    this.loginService.login(user).subscribe(data => {
-      console.log(data);
-      this.loginService.setLocalStorage(data.username);
+    this.loginService.login(user).subscribe((data:any) => {
+      //console.log(data);
+      this.loginService.setLocalStorage(data.token);
       this.loading= false;
       this.router.navigate(['/dashboard']);
     }, error => {
-      //console.log(error);
       this.loading=false;
       this.loginForm.reset();
       this.toastr.error(error.error.message, 'Error');
     });
-    // setTimeout( () => {
-    //   if (user.username === 'josebarajas' && user.password === 'admin123') {
-    //     this.loginForm.reset();
-    //     this.router.navigate(['/dashboard']);
-    //   } else {
-    //     this.toastr.error('Invalid username or password', 'Error');
-    //     this.loginForm.reset();
-    //   }
-    //   this.loading = false;
-    // }, 3000);
   }
 }

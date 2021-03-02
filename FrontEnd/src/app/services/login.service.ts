@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 import { environment } from '../../environments/environment';
 import { User } from '../models/user';
 
@@ -21,14 +24,21 @@ export class LoginService {
   }
 
   setLocalStorage(data) {
-    localStorage.setItem('username', data);
+    //console.log(data);
+    localStorage.setItem('token', data);
   }
 
-  getUserName(): string {
-    return localStorage.getItem('username');
+  // getUserName(): string {
+  //   return localStorage.getItem('username');
+  // }
+  getTokenDecoded(): any {
+    const helper = new JwtHelperService();
+
+    const decodedToken = helper.decodeToken(localStorage.getItem('token'));
+    return decodedToken;
   }
 
   removeUserName() {
-    localStorage.removeItem('username');
+    localStorage.removeItem('token');
   }
 }

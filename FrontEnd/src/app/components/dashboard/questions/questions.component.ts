@@ -16,7 +16,10 @@ export class QuestionsComponent implements OnInit {
   }
 
   getUserName() {
-    this.username = this.loginService.getUserName();
+    //console.log(this.loginService.getTokenDecoded());
+    //this.username = this.loginService.getUserName();
+    this.username = this.loginService.getTokenDecoded().sub;
+
   }
 
 }
