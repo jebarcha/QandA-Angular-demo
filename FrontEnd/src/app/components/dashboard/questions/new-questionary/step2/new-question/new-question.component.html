@@ -1,0 +1,46 @@
+<form [formGroup]="newQuestion">
+    <div class="form-group input-group-lg">
+        <input type="text" 
+               class="form-control" 
+               placeholder="Enter question"
+               formControlName="title">
+        <span class="text-danger" 
+              *ngIf="newQuestion.get('title').hasError('required') && newQuestion.get('title').touched">
+            The question <strong>is required</strong>
+        </span>
+    </div>
+
+    <div formArrayName="answers" *ngFor="let item of getAnswers.controls; let i=index">
+        <div class="input-group" [formGroupName]="i" style="padding-top:10px;">
+            <input type="text" class="form-control" 
+                   placeholder="Answer {{ i + 1 }}" 
+                   formControlName="description">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="radio" name="isCorrect"
+                           (change)="setValidAnswer(i)"
+                           [value]="i"
+                           formControlName="isCorrect">
+                </div>
+            </div>
+            <span class="material-icons delete-icon" (click)="removeAnswer(i)">
+                delete
+            </span>
+        </div>
+        <span class="text-danger"
+              *ngIf="item.get('description').hasError('required') && item.get('description').touched">
+            The answer <strong>is required</strong>
+        </span>
+    </div>
+
+    <span class="material-icons add-icon" (click)="addAnswer()">
+        add
+    </span>
+    <br>
+    <br>
+    <button class="btn btn-primary float-right"
+            [disabled]="this.newQuestion.invalid"
+            (click)="addQuestion()">
+        Add
+    </button>
+</form>

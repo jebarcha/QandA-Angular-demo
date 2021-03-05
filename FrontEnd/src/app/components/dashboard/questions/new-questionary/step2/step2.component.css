@@ -1,0 +1,16 @@
+.btnEnd {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 15px;
+	cursor: pointer;
+}
+
+.material-icons {
+	float: right;
+}
+
+.list-group-item {
+	padding: .20rem;
+	padding-left: 20px;
+}

@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <h3 class="text-center">Questionary Data</h3>
+        <br>
+        <form [formGroup]="dataQuestionary"
+              (ngSubmit)="stepOne()">
+            <div class="form-group">
+                <input type="text" 
+                       class="form-control" 
+                       placeholder="Enter title of questionary"
+                       formControlName="title">
+                <div class="text-danger" *ngIf="dataQuestionary.get('title').hasError('required') && dataQuestionary.get('title').touched">
+                    The title <strong>is required</strong>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea rows="3"
+                       class="form-control" 
+                       placeholder="Enter description of questionary"
+                       formControlName="description">
+                </textarea>
+                <div class="text-danger" *ngIf="dataQuestionary.get('description').hasError('required') && dataQuestionary.get('description').touched">
+                    The description <strong>is required</strong>
+                </div>                
+            </div>
+            <button class="btn btn-success float-right"
+                    [disabled]="dataQuestionary.invalid">
+                Next
+            </button>
+        </form>
+    </div>
+</div>
