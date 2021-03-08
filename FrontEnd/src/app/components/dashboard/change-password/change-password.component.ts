@@ -42,7 +42,7 @@ export class ChangePasswordComponent implements OnInit {
     };
     this.loading = true;
     this.userService.changePassword(changePassword).subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.toastr.success('Password changed successfully!','Password Change');
       this.router.navigate(['/dashboard']);
     }, error => {

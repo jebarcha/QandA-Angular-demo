@@ -84,6 +84,7 @@ export class NewQuestionComponent implements OnInit {
   }
 
   reset() {
+    this.AnsCorrect = 0;
     this.newQuestion.reset();
     this.getAnswers.clear();
     this.addDefaultAnswers();

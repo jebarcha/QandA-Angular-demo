@@ -25,7 +25,7 @@ export class Step1Component implements OnInit {
   }
 
   stepOne() {
-    console.log(this.dataQuestionary);
+    //console.log(this.dataQuestionary);
     this.questionaryService.titleQuestionary = this.dataQuestionary.value.title;
     this.questionaryService.descriptionQuestionary = this.dataQuestionary.value.description;
     this.router.navigate(['/dashboard/newQuestionary/step2']);

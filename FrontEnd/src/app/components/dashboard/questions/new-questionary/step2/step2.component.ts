@@ -23,12 +23,12 @@ export class Step2Component implements OnInit {
   ngOnInit(): void {
     this.titleQuestionary = this.questionaryService.titleQuestionary;
     this.descriptionQuestionary = this.questionaryService.descriptionQuestionary;
-    console.log(this.questionaryService.titleQuestionary, this.questionaryService.descriptionQuestionary);
+    //console.log(this.questionaryService.titleQuestionary, this.questionaryService.descriptionQuestionary);
   }
 
   saveQuestion(question: Question) {
       this.listQuestions.push(question);
-      console.log(this.listQuestions);
+      //console.log(this.listQuestions);
   }
 
   removeQuestion(index: number) {
@@ -44,13 +44,13 @@ export class Step2Component implements OnInit {
       listQuestions: this.listQuestions
     };
 
-    console.log(questionary);
+    //console.log(questionary);
 
     this.questionaryService.saveQuestionary(questionary).subscribe(data => {
       this.toastr.success('Questionary was saved successfully', 'Questionary Saved');
       this.router.navigate(['/dashboard']);
     }, error => {
-      console.log(error);
+      //console.log(error);
       this.toastr.error('An error occurred!', 'Error');
       this.router.navigate(['/dashboard']);
     });

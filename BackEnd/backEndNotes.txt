@@ -17,3 +17,9 @@ appsettings.json
 Create database:
  Add-Migration Inicial
  Update-database
+------------------------------------
+
+Add migration:
+ Add-Migration v1.1
+ Update-database
+ To undo this action, use Remove-Migration

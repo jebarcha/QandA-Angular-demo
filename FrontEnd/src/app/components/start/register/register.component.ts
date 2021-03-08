@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   registerUser() {
     this.loading = true;
-    console.log(this.register);
+    //console.log(this.register);
 
     const user: User = {
       username: this.register.value.username,
