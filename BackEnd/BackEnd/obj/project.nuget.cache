@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "f3LHM74B/WfB9E/CkxDCr9f2uneIj9mx6kVjL96EIjKdaqD1pScg48lGqilKeaOPOLtyccLypbenT0enZ/kCeg==",
+  "dgSpecHash": "wJePa+k+E5bVCgAYKUGnphq+MyBIrgIv8zlF2FisXrHDQlb6sMpiCkQhKFsUtYNahGqZeYZBwGItTkEw50zg2A==",
   "success": true,
   "projectFilePath": "C:\\MisCursos\\AngularApps\\_2021\\WithDotNet5\\QandA\\BackEnd\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
+    "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.8\\microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512",
+    "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.8\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.8.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -37,7 +39,8 @@
     "C:\\Users\\J.Jesus\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\mysqlconnector\\0.61.0\\mysqlconnector.0.61.0.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\J.Jesus\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\J.Jesus\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.1.2\\pomelo.entityframeworkcore.mysql.3.1.2.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\J.Jesus\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",

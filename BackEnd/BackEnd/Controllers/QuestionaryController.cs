@@ -29,8 +29,7 @@ namespace BackEnd.Controllers
         {
             try
             {
-                var identity = HttpContext.User.Identity as ClaimsIdentity;
-                int idUser = JwtConfigurator.GetTokenUserId(identity);
+                int idUser = GetIdUser();
 
                 questionary.UserId = idUser;
                 questionary.IsActive = true;
@@ -44,5 +43,80 @@ namespace BackEnd.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [Route("GetListQuestionaryByUser")]
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> GetListQuestionaryByUser() 
+        {
+            try
+            {
+                int idUser = GetIdUser();
+
+                var listQuestionary = await _questionaryService.GetListQuestionaryByUser(idUser);
+                return Ok(listQuestionary);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("{questionaryId}")]
+        public async Task<IActionResult> GetQuestionry(int questionaryId) 
+        {
+            try
+            {
+                var questionary = await _questionaryService.GetQuestionary(questionaryId);
+                return Ok(questionary);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpDelete("{questionaryId}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> Delete(int questionaryId)
+        {
+            try
+            {
+                int idUser = GetIdUser();
+                var questionary = await _questionaryService.SearchQuestionary(questionaryId, idUser);
+                if (questionary == null) 
+                {
+                    return BadRequest(new { message = "Questionary was not found!" });
+                }
+                await _questionaryService.RemoveQuestionary(questionary);
+                return Ok(new { message = "Questionary was marked as deleted!" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [Route("GetListQuestionaries")]
+        [HttpGet]
+        public async Task<IActionResult> GetListQuestionaries() 
+        {
+            try
+            {
+                var listQuestionaries = await _questionaryService.GetListQuestionaries();
+                return Ok(listQuestionaries);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        private int GetIdUser() 
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            int idUser = JwtConfigurator.GetTokenUserId(identity);
+            return idUser;
+        }
+
     }
 }

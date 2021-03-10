@@ -23,3 +23,15 @@ Add migration:
  Add-Migration v1.1
  Update-database
  To undo this action, use Remove-Migration
+
+--------------------
+
+Install from nuget: Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
+and add in startup.cs:
+
+            services.AddControllers().AddNewtonsoftJson(options => 
+                                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+
+
