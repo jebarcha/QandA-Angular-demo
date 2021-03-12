@@ -15,11 +15,25 @@ export class QuestionaryService {
 
   constructor(private http: HttpClient) { 
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = '/api/questionary';
+    this.myApiUrl = '/api/questionary/';
   }
 
   saveQuestionary(questionary: Questionary): Observable<any> {
     return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, questionary);
+  }
+
+  getListQuestionary(): Observable<any> {
+    const url = `${this.myAppUrl}${this.myApiUrl}GetListQuestionaryByUser`;
+    //console.log(url)
+    return this.http.get(url);
+  }
+
+  deleteQuestionary(id: number): Observable<any> {
+    return this.http.delete(`${this.myAppUrl}${this.myApiUrl}${id}`)
+  }
+
+  getQuestionaryById(id: number): Observable<any> {
+    return this.http.get(`${this.myAppUrl}${this.myApiUrl}${id}`);
   }
 
 }

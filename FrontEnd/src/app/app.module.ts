@@ -26,6 +26,11 @@ import { NewQuestionaryComponent } from './components/dashboard/questions/new-qu
 import { Step1Component } from './components/dashboard/questions/new-questionary/step1/step1.component';
 import { Step2Component } from './components/dashboard/questions/new-questionary/step2/step2.component';
 import { NewQuestionComponent } from './components/dashboard/questions/new-questionary/step2/new-question/new-question.component';
+import { QuestionaryComponent } from './components/dashboard/questions/questionary/questionary.component';
+import { ListQuestionariesComponent } from './components/start/list-questionaries/list-questionaries.component';
+import { EnterNameComponent } from './components/start/list-questionaries/enter-name/enter-name.component';
+import { QuestionComponent } from './components/start/list-questionaries/question/question.component';
+import { AnswerQuestionaryComponent } from './components/start/list-questionaries/answer-questionary/answer-questionary.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +48,11 @@ import { NewQuestionComponent } from './components/dashboard/questions/new-quest
     Step1Component,
     Step2Component,
     NewQuestionComponent,
+    QuestionaryComponent,
+    ListQuestionariesComponent,
+    EnterNameComponent,
+    QuestionComponent,
+    AnswerQuestionaryComponent
   ],
   imports: [
     BrowserModule,

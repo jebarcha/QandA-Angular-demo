@@ -11,6 +11,7 @@ import { ChangePasswordComponent } from './components/dashboard/change-password/
 import { NewQuestionaryComponent } from './components/dashboard/questions/new-questionary/new-questionary.component';
 import { Step1Component } from './components/dashboard/questions/new-questionary/step1/step1.component';
 import { Step2Component } from './components/dashboard/questions/new-questionary/step2/step2.component';
+import { QuestionaryComponent } from './components/dashboard/questions/questionary/questionary.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, children: [
     { path: '', component: QuestionsComponent},
     { path: 'changePassword', component: ChangePasswordComponent},
+    { path: 'seeQuestionary/:id', component: QuestionaryComponent},
     { path: 'newQuestionary', 
       component: NewQuestionaryComponent, 
       children: [
