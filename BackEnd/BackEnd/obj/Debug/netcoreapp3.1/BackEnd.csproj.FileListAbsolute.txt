@@ -6,7 +6,6 @@ C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\bin\Debug\netco
 C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\BackEnd.runtimeconfig.dev.json
 C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\BackEnd.dll
 C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\BackEnd.pdb
-C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\obj\Debug\netcoreapp3.1\BackEnd.csprojAssemblyReference.cache
 C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\obj\Debug\netcoreapp3.1\BackEnd.AssemblyInfoInputs.cache
 C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\obj\Debug\netcoreapp3.1\BackEnd.AssemblyInfo.cs
 C:\MisCursos\AngularApps\_2021\WithDotNet5\QandA\BackEnd\BackEnd\obj\Debug\netcoreapp3.1\BackEnd.csproj.CoreCompileInputs.cache

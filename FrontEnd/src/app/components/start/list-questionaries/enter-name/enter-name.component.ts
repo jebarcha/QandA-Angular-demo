@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AnswerQuestionaryService } from '../../../../services/answer-questionary.service';
 
 @Component({
   selector: 'app-enter-name',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./enter-name.component.css']
 })
 export class EnterNameComponent implements OnInit {
+  name = '';
 
-  constructor() { }
+  constructor(private router: Router, 
+              private answerQuestionaryService: AnswerQuestionaryService) { }
 
   ngOnInit(): void {
+    if (!this.answerQuestionaryService.questionaryId) {
+      this.router.navigate(['/start']);
+    }
   }
 
+  next() {
+    this.answerQuestionaryService.participant = this.name;
+    console.log('navigate to question', );
+    this.router.navigate(['/start/question']);
+  }
 }

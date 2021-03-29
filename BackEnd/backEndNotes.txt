@@ -33,5 +33,9 @@ and add in startup.cs:
             services.AddControllers().AddNewtonsoftJson(options => 
                                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+--------------------------
 
+add a new migration  (use Remove-Migration)
+ Add-Migration v1.2
+ Update-database
 

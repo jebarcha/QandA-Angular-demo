@@ -22,7 +22,7 @@ export class QuestionaryService {
     return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, questionary);
   }
 
-  getListQuestionary(): Observable<any> {
+  getListQuestionaryByUser(): Observable<any> {
     const url = `${this.myAppUrl}${this.myApiUrl}GetListQuestionaryByUser`;
     //console.log(url)
     return this.http.get(url);
@@ -34,6 +34,10 @@ export class QuestionaryService {
 
   getQuestionaryById(id: number): Observable<any> {
     return this.http.get(`${this.myAppUrl}${this.myApiUrl}${id}`);
+  }
+
+  getListQuestionaries(): Observable<any> {
+    return this.http.get(`${this.myAppUrl}${this.myApiUrl}GetListQuestionaries`)
   }
 
 }

@@ -15,6 +15,6 @@ namespace BackEnd.Domain.Models
         public string Description { get; set; }
         public int QuestionaryId { get; set; }
         public Questionary Questionary { get; set; }
-        public List<Answer> listAnswers { get; set; }
+        public List<Answer> ListAnswers { get; set; }
     }
 }

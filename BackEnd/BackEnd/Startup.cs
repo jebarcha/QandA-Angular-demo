@@ -40,11 +40,13 @@ namespace BackEnd
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IQuestionaryService, QuestionaryService>();
+            services.AddScoped<IAnswerQuestionaryService, AnswerQuestionaryService>();
 
             // Repository
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILoginRepository, LoginRespository>();
             services.AddScoped<IQuestionaryRepository, QuestionaryRepository>();
+            services.AddScoped<IAnswerQuestionaryRepository, AnswerQuestionaryRepository>();
 
             // Cors
             services.AddCors(options => options.AddPolicy("AllowWebapp",

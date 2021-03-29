@@ -26,7 +26,7 @@ export class QuestionaryComponent implements OnInit {
     this.questionaryService.getQuestionaryById(this.idQuestionary).subscribe(questionary => {
       this.loading = false;
       this.questionary = questionary;
-      console.log(questionary);
+      //console.log(questionary);
     }, error => {
       this.loading = false;
       console.log(error);

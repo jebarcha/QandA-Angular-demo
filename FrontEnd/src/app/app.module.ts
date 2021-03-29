@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 // Interceptors
 import { AddTokenInterceptor } from '../app/helpers/add-token.interceptor'
@@ -31,6 +32,8 @@ import { ListQuestionariesComponent } from './components/start/list-questionarie
 import { EnterNameComponent } from './components/start/list-questionaries/enter-name/enter-name.component';
 import { QuestionComponent } from './components/start/list-questionaries/question/question.component';
 import { AnswerQuestionaryComponent } from './components/start/list-questionaries/answer-questionary/answer-questionary.component';
+import { StatisticsComponent } from './components/dashboard/questions/statistics/statistics.component';
+import { AnswerDetailComponent } from './components/dashboard/questions/statistics/answer-detail/answer-detail.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,9 @@ import { AnswerQuestionaryComponent } from './components/start/list-questionarie
     ListQuestionariesComponent,
     EnterNameComponent,
     QuestionComponent,
-    AnswerQuestionaryComponent
+    AnswerQuestionaryComponent,
+    StatisticsComponent,
+    AnswerDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { AnswerQuestionaryComponent } from './components/start/list-questionarie
     AppRoutingModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },

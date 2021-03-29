@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="card-body" [hidden]="question.hide">
-                <ul class="list-group">
+                <ul class="list-group" *ngIf="question.listAnswers">
                     <li class="list-group-item" *ngFor="let answer of question.listAnswers"
                         [ngClass]="{ 'list-group-item-success': answer.isCorrect }">
                         {{answer.description}}

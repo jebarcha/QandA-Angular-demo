@@ -1,1 +1,35 @@
-<p>answer-questionary works!</p>
+<div class="container">
+    <div class="card">
+        <h4>Result</h4>
+        <p class="card-text">This is the result of the questionary</p>
+        <div *ngFor="let question of questionary.listQuestions; let i = index" 
+             style="margin-bottom:10px">
+            <div class="card-header">
+                <b>{{ question.description }}</b>
+            </div>
+            <ul class="list-group" *ngFor="let answer of question.listAnswers">
+                <li class="list-group-item" 
+                    [ngClass]="{'list-group-item-success': answer.isCorrect && answerUser[i] === answer.id, 
+                                'list-group-item-danger': !answer.isCorrect && answerUser[i] === answer.id}">
+                    {{ answer.description }}
+                    <span class="material-icons correct" 
+                          *ngIf="answer.isCorrect && answerUser[i] === answer.id">
+                        check_circle
+                    </span>
+                    <span class="material-icons incorrect" 
+                          *ngIf="!answer.isCorrect && answerUser[i] === answer.id">
+                        highlight_off
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                <button class="btn btn-primary btn-lg btn-block"
+                    routerLink="/start">
+                    Back
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

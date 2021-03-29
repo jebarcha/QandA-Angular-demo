@@ -31,10 +31,10 @@ export class QuestionsComponent implements OnInit {
 
   getQuestionaries() {
     this.loading = true;
-    this.questionaryService.getListQuestionary().subscribe(questionaries => {
+    this.questionaryService.getListQuestionaryByUser().subscribe(questionaries => {
       this.listQuestionaries = questionaries;
       this.loading = false;
-      console.log(questionaries);
+      //(questionaries);
     }, error => {
       this.loading = false;
       console.log(error);

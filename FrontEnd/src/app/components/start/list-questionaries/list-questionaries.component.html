@@ -1,1 +1,39 @@
-<p>list-questionaries works!</p>
+<div class="container">
+    <div class="row" style="width:100%;">
+        <div class="card text-center" style="width:100%">
+            <br>
+            <h3>Welcome!</h3>
+            <app-loading *ngIf="loading" style="padding-bottom: 10px;"></app-loading>
+            <h4 *ngIf="listQuestionaries.length == 0 && !loading">There are no questionaries to show!</h4>
+            <div class="card-columns" style="padding: 10px">
+                <div class="card bg-light" *ngFor="let questionary of listQuestionaries">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">
+                            {{ questionary.name }}
+                        </h4>
+                        <p class="card-text">{{ questionary.description }}</p>
+                        <div style="font-size:13px;">
+                            <strong>Author: </strong>{{ questionary['user'].userName | titlecase}}
+                        </div>
+                        <div style="font-size:13px;">
+                            <strong>Creation Date: </strong>{{  questionary.create | date: 'dd/MM/yyyy'}}
+                        </div>
+                        <button class="btn btn-success btn-ing" 
+                                style="margin-bottom:20px"
+                                (click)="enterName(questionary.id)">
+                            Ingresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-auto">
+                <button class="btn btn-secondary btn-lg"
+                    routerLink="/start"
+                    style="margin-bottom: 20px;">
+                    Back
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -33,8 +33,8 @@ namespace BackEnd.Persistence.Repositories
         {
             var questionary = await _context.Questionary.Where(x => x.Id == questionaryId 
                                                                     && x.IsActive)
-                                                        .Include(x => x.listQuestions)
-                                                        .ThenInclude(x => x.listAnswers)
+                                                        .Include(x => x.ListQuestions)
+                                                        .ThenInclude(x => x.ListAnswers)
                                                         .FirstOrDefaultAsync();
 
             return questionary;

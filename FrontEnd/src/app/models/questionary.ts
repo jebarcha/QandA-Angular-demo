@@ -4,13 +4,13 @@ export class Questionary {
     id?: number;
     name: string;
     description: string;
-    dateCreation?: Date;
+    create?: Date;
     listQuestions: Question[];
 
-    constructor(name: string, description: string, dateCreation: Date, listQuestions: Question[]) {
+    constructor(name: string, description: string, create: Date, listQuestions: Question[]) {
         this.name = name;
         this.description = description;
-        this.dateCreation = dateCreation;
+        this.create = create;
         this.listQuestions = listQuestions;
     }
 }
