@@ -38,7 +38,7 @@ export class QuestionsComponent implements OnInit {
     }, error => {
       this.loading = false;
       console.log(error);
-      this.toastr.error('An error occurred', 'Error');
+      //this.toastr.error('An error occurred', 'Error');
     })
   }
 

@@ -41,4 +41,8 @@ export class LoginService {
   removeUserName() {
     localStorage.removeItem('token');
   }
+
+  getToken(): string {
+    return localStorage.getItem('token');
+  }
 }

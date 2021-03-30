@@ -32,7 +32,8 @@ namespace BackEnd.Utils
                 issuer: Issuer,
                 audience: Audience,
                 claims,
-                expires: DateTime.Now.AddMinutes(60),
+                expires: DateTime.Now.AddMinutes(120),
+                //expires: DateTime.Now.AddSeconds(10),
                 signingCredentials: credentials
                 );
 
